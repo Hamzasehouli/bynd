@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap");
 :root {
   --color-primary-light: #edf6e5;
-  --color-primary: #b5eaea;
+  --color-primary-light-op: #edf6e567;
+  --color-primary: rgb(181, 234, 234);
+  --color-primary-op: rgba(181, 234, 234, 0.349);
 
-  --color-secondary: #ffbcbc;
+  --color-secondary: rgb(255, 188, 188);
+  --color-secondary-op: rgba(255, 188, 188, 0.425);
   --color-secondary-dark: #f38ba0;
 }
 
@@ -33,4 +36,12 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }

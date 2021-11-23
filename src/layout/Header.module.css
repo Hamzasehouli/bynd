@@ -1,0 +1,15 @@
+nav {
+  background-color: var(--color-primary);
+  box-shadow: 2px 2px 20px solid rgba(59, 59, 59, 0.432);
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: center;
+}
+.nav__links > *:not(:last-child) {
+  margin-right: 2rem;
+}

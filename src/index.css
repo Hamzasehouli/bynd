@@ -55,13 +55,14 @@ button {
 }
 
 .section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   padding: 7rem 2rem;
-  width: 70%;
+  width: 100%;
 }
 
 .section h2 {
+  margin: 0 auto;
+  width: 70%;
   text-align: center;
 }

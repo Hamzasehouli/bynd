@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import image from "../images/black.jpg";
 import { useState } from "react";
 const Sample = function () {
-  const [products, setProduct] = useState([
+  const [products] = useState([
     {
       img: "",
       title: "Sneaker",
@@ -13,6 +13,16 @@ const Sample = function () {
       img: "",
       title: "Wanderes",
       price: "100.99",
+    },
+    {
+      img: "",
+      title: "Icehikers",
+      price: "99.99",
+    },
+    {
+      img: "",
+      title: "Icehikers",
+      price: "99.99",
     },
     {
       img: "",

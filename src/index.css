@@ -45,3 +45,8 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+}

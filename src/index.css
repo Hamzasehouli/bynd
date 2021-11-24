@@ -5,6 +5,8 @@
   --color-primary: rgb(181, 234, 234);
   --color-primary-op: rgba(181, 234, 234, 0.349);
 
+  --color-dark: #1d2d50;
+
   --color-secondary: rgb(255, 188, 188);
   --color-secondary-op: rgba(255, 188, 188, 0.425);
   --color-secondary-dark: #f38ba0;
@@ -28,6 +30,7 @@ html {
 body {
   font-size: 1.8rem;
   text-rendering: optimizeLegibility;
+  color: var(--color-dark);
 }
 
 ul {
@@ -49,4 +52,16 @@ button {
 .container {
   max-width: 1420px;
   margin: 0 auto;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 7rem 2rem;
+  width: 70%;
+}
+
+.section h2 {
+  text-align: center;
 }

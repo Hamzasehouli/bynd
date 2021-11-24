@@ -6,7 +6,6 @@ const Overview = function () {
     <>
       <Sample />
       <Learn />
-      <p>overview</p>
     </>
   );
 };

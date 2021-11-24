@@ -1,0 +1,39 @@
+.footer {
+  background-image: linear-gradient(
+    to top,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  padding: 7rem 8rem;
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footerList {
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  padding-bottom: 8rem;
+  border-bottom: 1px solid rgba(124, 123, 123, 0.253);
+}
+
+.footerItem {
+  /* justify-self: center; */
+}
+
+.copy {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.payList {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+.payListItem:not(:last-child) {
+  margin-right: 1rem;
+}

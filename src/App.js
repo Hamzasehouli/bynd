@@ -4,6 +4,7 @@ import Footer from "./layout/Footer";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Forgetpassword from "./pages/Forgetpassword";
 import Nav from "./components/Nav";
 import React, { useEffect, useContext, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
@@ -32,6 +33,10 @@ function App() {
             <Route path="/account/signup">
               <Nav />
               <Signup />
+            </Route>
+            <Route path="/account/reset-password">
+              <Nav />
+              <Forgetpassword />
             </Route>
             {/* <Route exact path="/signup">
               {isLoggedin ? <Redirect to="/" /> : <Signup />}

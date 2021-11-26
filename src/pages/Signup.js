@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
-const Login = function () {
+const Signup = function () {
   const handleSubmit = function (e) {
     e.preventDefault();
     console.log("jjjjj");
@@ -10,7 +10,15 @@ const Login = function () {
   return (
     <section className={classes.section__form}>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <h2>Login</h2>
+        <h2>Create account</h2>
+        <div className={classes.form__control}>
+          <label className={classes.form__label}>First name</label>
+          <input type="email" className={classes.form__input}></input>
+        </div>
+        <div className={classes.form__control}>
+          <label className={classes.form__label}>Last name</label>
+          <input type="email" className={classes.form__input}></input>
+        </div>
         <div className={classes.form__control}>
           <label className={classes.form__label}>Email</label>
           <input type="email" className={classes.form__input}></input>
@@ -20,15 +28,14 @@ const Login = function () {
           <input type="password" className={classes.form__input}></input>
         </div>
         <Button styl="outline" type="submit">
-          Login
+          Create
         </Button>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Link to="/account/signup">Create account</Link>
-          <Link to="/account/signup">Forget password?</Link>
+          <Link to="/account/signup">Return to store</Link>
         </div>
       </form>
     </section>
   );
 };
 
-export default Login;
+export default Signup;

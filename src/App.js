@@ -2,19 +2,36 @@ import "./App.css";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Overview from "./pages/Overview";
-import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Nav from "./components/Nav";
+import React, { useEffect, useContext, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
+import { Appcontext } from "./store/Context";
+
 function App() {
+  const [pathname, setPathname] = useState();
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  });
+
   return (
     <>
-      {window.location.pathname === "/" ? <Header /> : <Nav />}
       <main className="main">
         <Router>
           <Switch>
             <Route exact path="/">
+              <Header />
               <Overview />
+            </Route>
+            <Route path="/account/login">
+              <Nav />
+              <Login />
+            </Route>
+            <Route path="/account/signup">
+              <Nav />
+              <Signup />
             </Route>
             {/* <Route exact path="/signup">
               {isLoggedin ? <Redirect to="/" /> : <Signup />}

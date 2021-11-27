@@ -1,0 +1,19 @@
+.CollectionMenuList h3 {
+  margin: 0 0 2rem 0;
+}
+.CollectionMenuItem:not(:last-of-type) {
+  margin-bottom: 1.4rem;
+}
+
+.CollectionMenuItem {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.active {
+  padding: 0.6rem 2rem;
+  display: block;
+  border: 1.5px solid var(--color-primary);
+  width: 20rem;
+  border-radius: 100px;
+}

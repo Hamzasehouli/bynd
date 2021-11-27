@@ -4,12 +4,23 @@ import Footer from "./layout/Footer";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Collection from "./pages/Collection";
+import Sneakers from "./pages/Sneakers";
+import Wandern from "./pages/Wandern";
+import Allproducts from "./pages/Allproducts";
 import Forgetpassword from "./pages/Forgetpassword";
 import Nav from "./components/Nav";
 import React, { useEffect, useContext, useState } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import { Appcontext } from "./store/Context";
+import Bestselling from "./pages/Bestselling";
 
 function App() {
   const [pathname, setPathname] = useState();
@@ -33,6 +44,25 @@ function App() {
             <Route path="/account/signup">
               <Nav />
               <Signup />
+            </Route>
+            <Route exact path="/collections">
+              <Redirect to="/collections/all"></Redirect>
+            </Route>
+            <Route path="/collections/all">
+              <Nav />
+              <Allproducts />
+            </Route>
+            <Route path="/collections/best-selling">
+              <Nav />
+              <Bestselling />
+            </Route>
+            <Route path="/collections/sneakers">
+              <Nav />
+              <Sneakers />
+            </Route>
+            <Route path="/collections/wandern">
+              <Nav />
+              <Wandern />
             </Route>
             <Route path="/account/reset-password">
               <Nav />

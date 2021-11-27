@@ -1,0 +1,16 @@
+.collectionContainer {
+  padding: 2rem;
+}
+.header {
+  background-image: linear-gradient(to bottom, var(--color-primary), white);
+  height: 40vh;
+
+  padding: 1rem 3rem;
+}
+
+.headingPrimary {
+  font-size: 10rem;
+}
+.headingSecondary {
+  font-size: 3rem;
+}

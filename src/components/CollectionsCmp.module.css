@@ -1,5 +1,6 @@
 .collectionContainer {
   padding: 2rem;
+  display: flex;
 }
 .header {
   background-image: linear-gradient(to bottom, var(--color-primary), white);

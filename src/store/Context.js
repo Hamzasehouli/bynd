@@ -1,29 +1,156 @@
 import React, { createContext, useState } from "react";
 
 export const Appcontext = createContext({
-  name: "default",
-  age: "defaul",
-  job: "default",
-  pathname: "",
-  setName: () => {},
-  setAge: () => {},
-  setJob: () => {},
-  setPathname: () => {},
+  data: [
+    {
+      img: "black",
+      price: 49,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 88,
+      collection: "sneakers",
+    },
+    {
+      img: "black",
+      price: 55,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+  ],
 });
 
 const Initcontext = function (props) {
-  const [name, setName] = useState("hamza");
-  const [age, setAge] = useState("");
-  const [job, setJob] = useState("");
-  const [pathname, setPathname] = useState("");
+  const [data, setData] = useState([
+    {
+      img: "black",
+      price: 49,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 88,
+      collection: "sneakers",
+    },
+    {
+      img: "black",
+      price: 55,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "black",
+      price: 49,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 88,
+      collection: "sneakers",
+    },
+    {
+      img: "black",
+      price: 55,
+      collection: "bestselling",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "bestselling",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "bestselling",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "bestselling",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "bestselling",
+    },
+    {
+      img: "black",
+      price: 49,
+      collection: "wandern",
+    },
+    {
+      img: "white",
+      price: 88,
+      collection: "wandern",
+    },
+    {
+      img: "black",
+      price: 55,
+      collection: "wandern",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "wandern",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "wandern",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+    {
+      img: "white",
+      price: 67,
+      collection: "sneakers",
+    },
+  ]);
+
   const ctx = {
-    name,
-    age,
-    job,
-    setName,
-    setAge,
-    setJob,
-    pathname,
+    data,
   };
   return (
     <Appcontext.Provider value={ctx}>{props.children}</Appcontext.Provider>

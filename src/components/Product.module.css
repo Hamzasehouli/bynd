@@ -1,0 +1,9 @@
+.img {
+  width: 100%;
+  height: 35rem;
+  object-fit: cover;
+}
+.product {
+  overflow: hidden;
+  border-radius: 5px;
+}

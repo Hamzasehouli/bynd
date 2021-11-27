@@ -1,4 +1,5 @@
 import CollectioncmpMenu from "./CollectioncmpMenu";
+import CollectioncmpProducts from "./CollectioncmpProducts";
 import classes from "./CollectionsCmp.module.css";
 const CollectionsCmp = function (props) {
   return (
@@ -9,7 +10,7 @@ const CollectionsCmp = function (props) {
       </div>
       <div className={classes.collectionContainer}>
         <CollectioncmpMenu />
-        <div className={classes.products}></div>
+        <CollectioncmpProducts data={props.data} />
       </div>
     </section>
   );

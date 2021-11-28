@@ -78,6 +78,7 @@ function App() {
               <Nav />
               <Profile />
             </Route>
+
             <Route path="/account/*">
               <Redirect to="/profile"></Redirect>
             </Route>

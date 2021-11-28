@@ -2,17 +2,18 @@ import Button from "../components/Button";
 import black from "../images/black.jpg";
 import white from "../images/white.jpg";
 import classes from "./Learn.module.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import simpleParallax from "simple-parallax-js";
 
 const Learn = function () {
   const leftImage = useRef();
-  console.log(leftImage);
   const rightImage = useRef();
-  new simpleParallax(leftImage.current, {
-    orientation: "right",
+  useEffect(() => {
+    new simpleParallax(leftImage.current, {
+      orientation: "right",
+    });
+    new simpleParallax(rightImage.current, { orientation: "left" });
   });
-  new simpleParallax(rightImage.current, { orientation: "left" });
   return (
     <section className="section">
       <ul className={classes.learnList}>

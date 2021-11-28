@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
 const Login = function () {
+  document.title = "Login | bynd";
   const handleSubmit = function (e) {
     e.preventDefault();
     console.log("jjjjj");

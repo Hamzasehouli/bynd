@@ -5,6 +5,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 2px 20px rgba(110, 110, 110, 0.349);
+  background-color: white;
+  z-index: 9999999999; */
 }
 
 .nav__links {

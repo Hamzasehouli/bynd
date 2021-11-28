@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
 const Forgetpassword = function () {
+  document.title = "Reset password | bynd";
   const handleSubmit = function (e) {
     e.preventDefault();
-    console.log("jjjjj");
   };
   return (
     <section className={classes.section__form}>

@@ -8,6 +8,7 @@ import Collection from "./pages/Collection";
 import Sneakers from "./pages/Sneakers";
 import Wandern from "./pages/Wandern";
 import Allproducts from "./pages/Allproducts";
+import Cart from "./pages/Cart";
 import Forgetpassword from "./pages/Forgetpassword";
 import Nav from "./components/Nav";
 import React, { useEffect, useContext, useState } from "react";
@@ -67,6 +68,10 @@ function App() {
             <Route path="/account/reset-password">
               <Nav />
               <Forgetpassword />
+            </Route>
+            <Route path="/cart">
+              <Nav />
+              <Cart />
             </Route>
             {/* <Route exact path="/signup">
               {isLoggedin ? <Redirect to="/" /> : <Signup />}

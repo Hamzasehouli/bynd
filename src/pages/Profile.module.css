@@ -11,3 +11,33 @@
   margin-left: 15rem;
   flex: 1;
 }
+
+.form {
+  background-color: white;
+  padding: 7rem;
+  border-radius: 7px;
+  width: 90%;
+  box-shadow: 2px 2px 20px rgba(112, 112, 112, 0.308);
+}
+
+.form > * {
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.form__input,
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  height: 3.5rem;
+  width: 100%;
+}
+
+.form__input {
+  padding: 1rem;
+}
+
+h2 {
+  margin-bottom: 3rem;
+}

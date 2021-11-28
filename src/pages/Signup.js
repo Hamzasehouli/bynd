@@ -6,7 +6,6 @@ const Signup = function () {
   document.title = "Register | bynd";
   const handleSubmit = function (e) {
     e.preventDefault();
-    console.log("jjjjj");
   };
   return (
     <section className={classes.section__form}>

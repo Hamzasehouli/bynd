@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Baseitem from "../components/Baseitem";
+import Button from "../components/Button";
 import CollectioncmpMenu from "../components/CollectioncmpMenu";
 import Cart from "./Cart.js";
 const Profile = function () {
   const location = useLocation();
   document.title = "hamza Sehouli | bynd";
-
+  const handleSubmit = function (e) {
+    e.preventDefault();
+  };
   const [path, setPath] = useState();
 
   return (
@@ -68,6 +71,31 @@ const Profile = function () {
           </Route>
           <Route path="/account/details">
             <h2>Details</h2>
+            <form className={classes.form} onSubmit={handleSubmit}>
+              <h2>Create account</h2>
+              <div className={classes.form__control}>
+                <label className={classes.form__label}>First name</label>
+                <input type="email" className={classes.form__input}></input>
+              </div>
+              <div className={classes.form__control}>
+                <label className={classes.form__label}>Last name</label>
+                <input type="email" className={classes.form__input}></input>
+              </div>
+              <div className={classes.form__control}>
+                <label className={classes.form__label}>Email</label>
+                <input type="email" className={classes.form__input}></input>
+              </div>
+              <div className={classes.form__control}>
+                <label className={classes.form__label}>Password</label>
+                <input type="password" className={classes.form__input}></input>
+              </div>
+              <Button styl="outline" type="submit">
+                Save
+              </Button>
+              <div style={{ display: "flex", justifyContent: "space-around" }}>
+                <Link to="/">Return to store</Link>
+              </div>
+            </form>
           </Route>
         </div>
       </Router>

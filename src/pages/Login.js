@@ -25,7 +25,7 @@ const Login = function () {
         </Button>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Link to="/account/signup">Create account</Link>
-          <Link to="/account/signup">Forget password?</Link>
+          <Link to="/account/reset-password">Forget password?</Link>
         </div>
       </form>
     </section>

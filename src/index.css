@@ -66,3 +66,11 @@ button {
   width: 70%;
   text-align: center;
 }
+
+.active {
+  padding: 0.6rem 2rem;
+  display: block;
+  border: 1.5px solid var(--color-primary);
+  width: 20rem;
+  border-radius: 100px;
+}

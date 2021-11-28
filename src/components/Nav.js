@@ -20,7 +20,7 @@ const Nav = function () {
       </Link>
       <ul className={classes.nav__links}>
         <li>
-          <a href="#">Cart</a>
+          <Link to="/cart">Cart</Link>
         </li>
         <li>
           <Link to="/account/login">Account</Link>

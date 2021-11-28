@@ -1,0 +1,13 @@
+.sectionProfile {
+  padding: 7rem 0 7rem 15rem;
+  display: flex;
+}
+
+.profileMenuList > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.profileRender {
+  margin-left: 15rem;
+  flex: 1;
+}

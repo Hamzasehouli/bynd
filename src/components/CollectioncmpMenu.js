@@ -16,7 +16,7 @@ const CollectioncmpMenu = function () {
       <li className={classes.CollectionMenuItem}>
         <Link
           className={
-            (classes.CollectionMenuAnch, params === "all" ? classes.active : "")
+            (classes.CollectionMenuAnch, params === "all" ? "active" : "")
           }
           to="/collections/all"
         >
@@ -27,7 +27,7 @@ const CollectioncmpMenu = function () {
         <Link
           className={
             (classes.CollectionMenuAnch,
-            params === "best-selling" ? classes.active : "")
+            params === "best-selling" ? "active" : "")
           }
           to="/collections/best-selling"
         >
@@ -37,8 +37,7 @@ const CollectioncmpMenu = function () {
       <li className={classes.CollectionMenuItem}>
         <Link
           className={
-            (classes.CollectionMenuAnch,
-            params === "sneakers" ? classes.active : "")
+            (classes.CollectionMenuAnch, params === "sneakers" ? "active" : "")
           }
           to="/collections/sneakers"
         >
@@ -48,8 +47,7 @@ const CollectioncmpMenu = function () {
       <li className={classes.CollectionMenuItem}>
         <Link
           className={
-            (classes.CollectionMenuAnch,
-            params === "wandern" ? classes.active : "")
+            (classes.CollectionMenuAnch, params === "wandern" ? "active" : "")
           }
           to="/collections/wandern"
         >

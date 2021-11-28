@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Collection from "./pages/Collection";
 import Sneakers from "./pages/Sneakers";
 import Wandern from "./pages/Wandern";
+import Profile from "./pages/Profile";
 import Allproducts from "./pages/Allproducts";
 import Cart from "./pages/Cart";
 import Forgetpassword from "./pages/Forgetpassword";
@@ -72,6 +73,13 @@ function App() {
             <Route path="/cart">
               <Nav />
               <Cart />
+            </Route>
+            <Route path="/profile">
+              <Nav />
+              <Profile />
+            </Route>
+            <Route path="/account/*">
+              <Redirect to="/profile"></Redirect>
             </Route>
             {/* <Route exact path="/signup">
               {isLoggedin ? <Redirect to="/" /> : <Signup />}

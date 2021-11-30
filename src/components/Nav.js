@@ -5,14 +5,14 @@ const Nav = function () {
     <nav className={classes.nav}>
       <ul className={classes.nav__links}>
         <li>
-          <a href="#">Shop</a>
+          <Link to="/collections">Shop</Link>
         </li>
-        <li>
+        {/* <li>
           <a href="#">About</a>
         </li>
         <li>
           <a href="/accout/login">Contact</a>
-        </li>
+        </li> */}
       </ul>
       <Link to="/">
         {/* <img src="#"></img> */}

@@ -1,17 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+
+import { Appcontext } from "../store/Context";
+
 const Signup = function () {
+  const ctx = useContext(Appcontext);
   const history = useHistory();
   document.title = "Register | bynd";
   const email = useRef(null);
   const password = useRef(null);
   const handleSubmit = async function (e) {
     e.preventDefault();
-    console.log(email);
 
     // axios({
     //   method: "post",
@@ -21,26 +24,31 @@ const Signup = function () {
     //     password: passwordRef.current,
     //   },
     // });
-    const res = await fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
-      {
-        method: "POST",
-        header: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email.current.value,
-          password: password.current.value,
-        }),
-      }
-    );
+    try {
+      const res = await fetch(
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
+        {
+          method: "POST",
+          header: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email.current.value,
+            password: password.current.value,
+          }),
+        }
+      );
 
-    if (res.ok) {
-      const data = await res.json();
-      document.cookie = `jwt=${data.idToken}`;
-      email.current.value = "";
-      password.current.value = "";
-      history.replace("/");
+      if (res.ok) {
+        const data = await res.json();
+        document.cookie = `jwt=${data.idToken}; path=/`;
+        email.current.value = "";
+        password.current.value = "";
+        ctx.setLoggedIn(true);
+        history.replace("/");
+      }
+    } catch (err) {
+      ctx.setLoggedIn(false);
     }
   };
   return (

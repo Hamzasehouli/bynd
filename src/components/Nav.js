@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "./Nav.module.css";
 const Nav = function () {
   return (
@@ -10,19 +11,19 @@ const Nav = function () {
           <a href="#">About</a>
         </li>
         <li>
-          <a href="#">Contact</a>
+          <a href="/accout/login">Contact</a>
         </li>
       </ul>
-      <a href="">
+      <Link to="/">
         {/* <img src="#"></img> */}
         <p style={{ fontSize: 4 + "rem", fontWeight: 700 }}>bynd</p>
-      </a>
+      </Link>
       <ul className={classes.nav__links}>
         <li>
-          <a href="#">Cart</a>
+          <Link to="/cart">Cart</Link>
         </li>
         <li>
-          <a href="#">Account</a>
+          <Link to="/account/login">Account</Link>
         </li>
       </ul>
     </nav>

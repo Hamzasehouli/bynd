@@ -1,0 +1,104 @@
+.first {
+  display: inline-block;
+  animation-name: first;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+}
+.sec {
+  display: inline-block;
+  animation-name: sec;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-delay: 15s;
+  animation-timing-function: linear;
+}
+/* .third {
+  animation-name: third;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-delay: 6s;
+} */
+.newsBox {
+  overflow: hidden;
+  background-color: var(--color-primary);
+  margin-bottom: 5rem;
+}
+
+@keyframes first {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(300%);
+  }
+}
+@keyframes sec {
+  from {
+    transform: translateX(-300%);
+  }
+
+  to {
+    transform: translateX(300%);
+  }
+}
+/* @keyframes sec {
+  from {
+    transform: translateX(1000px);
+  }
+
+  to {
+    transform: translateX(-1000px);
+  }
+}
+@keyframes third {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-1000px);
+  } */
+
+.cartImg {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 6px;
+}
+
+.cartList {
+  width: 100%;
+  padding: 3rem;
+}
+.cartList > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.cartItem {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  box-shadow: 2px 2px 20px rgba(95, 94, 94, 0.226);
+  padding: 2rem;
+}
+.info {
+  margin-right: auto;
+  margin-left: 2.6rem;
+}
+
+.info > *:not(:last-child) {
+  margin-bottom: 0.7rem;
+  border-radius: 6px;
+}
+
+.count {
+  display: flex;
+  border-radius: 50px;
+  box-shadow: 2px 2px 20px rgba(145, 144, 144, 0.226);
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+}

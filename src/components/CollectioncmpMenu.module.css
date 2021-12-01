@@ -1,0 +1,11 @@
+.CollectionMenuList h3 {
+  margin: 0 0 2rem 0;
+}
+.CollectionMenuItem:not(:last-of-type) {
+  margin-bottom: 1.4rem;
+}
+
+.CollectionMenuItem {
+  font-weight: 700;
+  text-transform: capitalize;
+}

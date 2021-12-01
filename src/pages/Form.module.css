@@ -1,0 +1,32 @@
+.section__form {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 0;
+}
+
+.form {
+  background-color: white;
+  padding: 7rem;
+  border-radius: 7px;
+  width: 40%;
+}
+
+.form > * {
+  display: block;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.form__input,
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  height: 3.5rem;
+  width: 100%;
+}
+
+.form__input {
+  padding: 1rem;
+}

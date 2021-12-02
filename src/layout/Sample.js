@@ -1,35 +1,11 @@
 import classes from "./Sample.module.css";
 import Button from "../components/Button";
 import image from "../images/black.jpg";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Appcontext } from "../store/Context";
 const Sample = function () {
-  const [products] = useState([
-    {
-      img: "",
-      title: "Sneaker",
-      price: "110.99",
-    },
-    {
-      img: "",
-      title: "Wanderes",
-      price: "100.99",
-    },
-    {
-      img: "",
-      title: "Icehikers",
-      price: "99.99",
-    },
-    {
-      img: "",
-      title: "Icehikers",
-      price: "99.99",
-    },
-    {
-      img: "",
-      title: "Icehikers",
-      price: "99.99",
-    },
-  ]);
+  const ctx = useContext(Appcontext);
+
   return (
     <section className={`${classes.sample}`}>
       <div className="container section">
@@ -40,18 +16,39 @@ const Sample = function () {
         </h2>
       </div>
       <ul className={`${classes.productList}`}>
-        {products.map((p) => (
-          <li className={classes.productItem}>
-            <figure className={classes.productFigure}>
-              <img alt="ss" src={image} className={classes.productImage}></img>
-            </figure>
-            <h3>{p.title}</h3>
-            <p className={classes.productPrice}>USD {p.price}</p>
-            <Button styl="outline" type="button">
-              Shop Now
-            </Button>
-          </li>
-        ))}
+        {ctx.sample.map((p) => {
+          let image = require(`../images/${p.image}.jpg`);
+          return (
+            <li key={p.id} className={classes.productItem}>
+              <figure className={classes.productFigure}>
+                <img
+                  alt="ss"
+                  src={image.default}
+                  className={classes.productImage}
+                ></img>
+              </figure>
+              <h3>{p.title}</h3>
+              <p className={classes.productPrice}>USD {p.price}</p>
+              <button
+                onClick={() => {
+                  console.log("ööööööööööööööööööööööööööö");
+                  ctx.setCartItem({
+                    id: p.id,
+                    title: p.title,
+                    collection: p.collection,
+                    price: p.price,
+                    quantity: p.quantity ?? 1,
+                    image: p.image,
+                  });
+                }}
+                styl="outline"
+                type="button"
+              >
+                Add to cart
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

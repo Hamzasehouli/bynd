@@ -1,16 +1,17 @@
 import { useContext } from "react";
 import { Appcontext } from "../store/Context";
 import classes from "./Cart.module.css";
-import image from "../images/black.jpg";
+import Button from "../components/Button";
+
 const Cart = function (props) {
   const ctx = useContext(Appcontext);
   document.title = "Cart | bynd";
   console.log(ctx.cart);
-  {
-    if (ctx.cart.length === 0) {
-      return <p>Cart is empty</p>;
-    }
+
+  if (ctx.cart.length === 0) {
+    return <p>Cart is empty</p>;
   }
+
   return (
     <>
       {props.status !== "profile" ? (
@@ -57,7 +58,9 @@ const Cart = function (props) {
                   <button type="button">+</button>
                 </div>
               </div>
-              <p className={classes.delete}>remove</p>
+              <Button type="button" styl="outline" className={classes.delete}>
+                remove
+              </Button>
             </li>
           );
         })}

@@ -45,7 +45,7 @@ const Nav = function () {
         )}
         {ctx.isLoggedIn ? (
           <li>
-            <Link to="/account/login">Profile</Link>
+            <Link to="/profile">Profile</Link>
           </li>
         ) : (
           ""

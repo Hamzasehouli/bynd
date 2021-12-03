@@ -1,5 +1,5 @@
 import Button from "../components/Button";
-import black from "../images/black.jpg";
+import black from "../images/wandern.jpg";
 import white from "../images/white.jpg";
 import classes from "./Learn.module.css";
 import { useRef, useEffect } from "react";

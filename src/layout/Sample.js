@@ -1,6 +1,6 @@
 import classes from "./Sample.module.css";
 import Button from "../components/Button";
-import image from "../images/black.jpg";
+
 import { useState, useContext } from "react";
 import { Appcontext } from "../store/Context";
 const Sample = function () {
@@ -29,9 +29,8 @@ const Sample = function () {
               </figure>
               <h3>{p.title}</h3>
               <p className={classes.productPrice}>USD {p.price}</p>
-              <button
-                onClick={() => {
-                  console.log("ööööööööööööööööööööööööööö");
+              <Button
+                method={() => {
                   ctx.setCartItem({
                     id: p.id,
                     title: p.title,
@@ -45,7 +44,7 @@ const Sample = function () {
                 type="button"
               >
                 Add to cart
-              </button>
+              </Button>
             </li>
           );
         })}

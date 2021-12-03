@@ -1,5 +1,5 @@
 import classes from "./Baseitem.module.css";
-import image from "../images/black.jpg";
+import image from "../images/wandern.jpg";
 const Baseitem = function (props) {
   return (
     <li

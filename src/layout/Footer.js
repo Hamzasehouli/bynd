@@ -54,6 +54,12 @@ const Footer = function () {
         </li>
       </ul>
       <p className={classes.copy}>Copyright © 2021, bynd.</p>
+      <p className={classes.copy}>
+        Made by{" "}
+        <a target="_blank" href="https://hamzasehouli.ma">
+          Hamza Sehouli
+        </a>
+      </p>
       <ul className={classes.payList}>
         <li className={classes.payListItem}>visa</li>
         <li className={classes.payListItem}>visa</li>

@@ -22,7 +22,6 @@ const Profile = function () {
             <Link
               onClick={() => {
                 setPath("/account/mycart");
-                console.log("kkkkkkkk");
               }}
               className={
                 (classes.profileMenuLink,

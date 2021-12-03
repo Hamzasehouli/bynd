@@ -6,12 +6,13 @@ import Button from "../components/Button";
 const Cart = function (props) {
   const ctx = useContext(Appcontext);
   document.title = "Cart | bynd";
-  console.log(ctx.cart);
 
-  if (ctx.cart.length === 0) {
+  if (ctx.cart?.length === 0) {
     return <p>Cart is empty</p>;
   }
-
+  const removeItem = function (id) {
+    ctx.removeItemfromCart(id);
+  };
   return (
     <>
       {props.status !== "profile" ? (
@@ -32,7 +33,7 @@ const Cart = function (props) {
         style={{ padding: props.status === "profile" ? "2rem 2em 2rem 0" : "" }}
         className={classes.cartList}
       >
-        {ctx.cart.map((cartItem) => {
+        {ctx?.cart?.map((cartItem) => {
           let image = require(`../images/${cartItem.image}.jpg`);
           return (
             <li
@@ -58,7 +59,12 @@ const Cart = function (props) {
                   <button type="button">+</button>
                 </div>
               </div>
-              <Button type="button" styl="outline" className={classes.delete}>
+              <Button
+                method={() => removeItem(cartItem.id)}
+                type="button"
+                styl="outline"
+                className={classes.delete}
+              >
                 remove
               </Button>
             </li>

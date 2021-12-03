@@ -1,6 +1,6 @@
 import Button from "../components/Button";
-import black from "../images/wandern.jpg";
-import white from "../images/white.jpg";
+import black from "../images/adidas-black.jpg";
+import white from "../images/nike-black.jpg";
 import classes from "./Learn.module.css";
 import { useRef, useEffect } from "react";
 import simpleParallax from "simple-parallax-js";

@@ -5,7 +5,6 @@ const CollectioncmpMenu = function () {
   const location = useLocation();
 
   const [params, setParam] = useState();
-  console.log(location.pathname.split("/")[2]);
 
   useEffect(() => {
     setParam(location.pathname.split("/")[2]);

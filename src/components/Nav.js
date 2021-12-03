@@ -5,7 +5,7 @@ import { Appcontext } from "../store/Context";
 import Button from "./Button";
 const Nav = function () {
   const ctx = useContext(Appcontext);
-  console.log(ctx.isLoggedIn);
+
   return (
     <nav className={classes.nav}>
       <ul className={classes.nav__links}>

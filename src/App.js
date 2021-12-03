@@ -39,7 +39,6 @@ function App() {
   });
 
   useMemo(() => {
-    console.log(document.cookie.split("=")[1]);
     const res = fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
       {
@@ -49,17 +48,14 @@ function App() {
         },
         body: JSON.stringify({ idToken: document.cookie.split("=")[1] }),
       }
-    )
-      .then((res) => {
-        console.log(res);
-        if (res.ok) {
-          ctx.setLoggedIn(true);
-        } else {
-          ctx.setLoggedIn(false);
-        }
-        return res.json();
-      })
-      .then((data) => console.log(data));
+    ).then((res) => {
+      if (res.ok) {
+        ctx.setLoggedIn(true);
+      } else {
+        ctx.setLoggedIn(false);
+      }
+      return res.json();
+    });
   });
 
   return (

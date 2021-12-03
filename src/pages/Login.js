@@ -30,7 +30,6 @@ const Login = function () {
       }
     } catch (err) {
       ctx.setLoggedIn(false);
-      console.log(err);
     }
   };
   return (

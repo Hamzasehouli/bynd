@@ -11,16 +11,17 @@ export const Appcontext = createContext({
   isLoggedIn: false,
   setLoggedIn: () => {},
   setCartItem: () => {},
+  removeItemfromCart: () => {},
 });
 
 const Initcontext = function (props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [cart, setCart] = useState(cartItems);
+  const [cart, setCart] = useState();
   const [sample, setSample] = useState(sampleShoes);
   const [data, setData] = useState(allProducts);
 
   useEffect(() => {
-    if (!localStorage.getItem("cart")) return;
+    // if (!localStorage.getItem("cart")) return;
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, []);
 
@@ -35,6 +36,15 @@ const Initcontext = function (props) {
     setCartItem: (state) => {
       setCart([...cart, state]);
       localStorage.setItem("cart", JSON.stringify([...cart, state]));
+    },
+    removeItemfromCart: (id) => {
+      // const items = JSON.parse(localStorage.getItem("cart"));
+      const data = cart.filter((i) => id !== i.id);
+      console.log(data);
+      setCart("");
+      setCart(data);
+      // localStorage.removeItem("cart");
+      // localStorage.setItem("cart", JSON.stringify(cart));
     },
   };
   return (

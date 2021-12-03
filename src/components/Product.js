@@ -9,7 +9,14 @@ const Product = function (props) {
 
   return (
     <li className={classes.product}>
-      <img alt="mm" className={classes.img} src={image.default}></img>
+      <figure>
+        <img
+          style={{ cursor: "pointer" }}
+          alt="mm"
+          className={classes.img}
+          src={image.default}
+        ></img>
+      </figure>
       <div className={classes.info}>
         <h4 className={classes.headingQuartary}>{props.data.title}</h4>
         <h4 className={classes.headingQuartary}>{props.data.collection}</h4>

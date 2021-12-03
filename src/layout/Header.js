@@ -7,7 +7,6 @@ import { Appcontext } from "../store/Context";
 const Header = function () {
   const ctx = useContext(Appcontext);
 
-  console.log(ctx.isLoggedIn);
   return (
     <header className={classes.header}>
       <Nav />

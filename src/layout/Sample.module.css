@@ -18,12 +18,12 @@
 }
 
 .productList {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   display: grid;
   justify-content: end !important;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
 .productItem {

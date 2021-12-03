@@ -12,7 +12,14 @@ import Allproducts from "./pages/Allproducts";
 import Cart from "./pages/Cart";
 import Forgetpassword from "./pages/Forgetpassword";
 import Nav from "./components/Nav";
-import React, { useEffect, useContext, useState } from "react";
+import React, {
+  useEffect,
+  useContext,
+  useState,
+  useLayoutEffect,
+  useMemo,
+} from "react";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -26,8 +33,33 @@ import Bestselling from "./pages/Bestselling";
 
 function App() {
   const [pathname, setPathname] = useState();
+  const ctx = useContext(Appcontext);
   useEffect(() => {
     setPathname(window.location.pathname);
+  });
+
+  useMemo(() => {
+    console.log(document.cookie.split("=")[1]);
+    const res = fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
+      {
+        method: "POST",
+        header: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ idToken: document.cookie.split("=")[1] }),
+      }
+    )
+      .then((res) => {
+        console.log(res);
+        if (res.ok) {
+          ctx.setLoggedIn(true);
+        } else {
+          ctx.setLoggedIn(false);
+        }
+        return res.json();
+      })
+      .then((data) => console.log(data));
   });
 
   return (

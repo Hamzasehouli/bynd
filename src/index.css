@@ -47,6 +47,9 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  font-weight: 500;
 }
 
 .container {

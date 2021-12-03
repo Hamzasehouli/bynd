@@ -1,27 +1,36 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
 import axios from "axios";
+import { Appcontext } from "../store/Context";
 
 const Login = function () {
+  const ctx = useContext(Appcontext);
   const history = useHistory();
   const email = useRef();
   const password = useRef();
   document.title = "Login | bynd";
   const handleSubmit = async function (e) {
     e.preventDefault();
-    const res = await axios({
-      method: "post",
-      url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA`,
-      data: {
-        email: email.current.value,
-        password: password.current.value,
-      },
-    });
-    if (res.statusText === "OK") {
-      document.cookie = `jwt=${res.data.idToken}`;
-      history.replace("/");
+
+    try {
+      const res = await axios({
+        method: "post",
+        url: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA`,
+        data: {
+          email: email.current.value,
+          password: password.current.value,
+        },
+      });
+      if (res.statusText === "OK") {
+        document.cookie = `jwt=${res.data.idToken}; path=/`;
+        ctx.setLoggedIn(true);
+        history.replace("/");
+      }
+    } catch (err) {
+      ctx.setLoggedIn(false);
+      console.log(err);
     }
   };
   return (

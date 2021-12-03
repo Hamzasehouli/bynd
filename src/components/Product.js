@@ -1,7 +1,7 @@
 import classes from "./Product.module.css";
 const Product = function (props) {
   const image = require(`../images/${props.data.img}.jpg`);
-  console.log(image);
+
   return (
     <li className={classes.product}>
       <img className={classes.img} src={image.default}></img>

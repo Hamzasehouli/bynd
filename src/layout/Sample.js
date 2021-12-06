@@ -2,6 +2,7 @@ import classes from "./Sample.module.css";
 import Button from "../components/Button";
 
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { Appcontext } from "../store/Context";
 const Sample = function () {
   const ctx = useContext(Appcontext);
@@ -19,33 +20,35 @@ const Sample = function () {
         {ctx.sample.map((p) => {
           let image = require(`../images/${p.image}.jpg`);
           return (
-            <li key={p.id} className={classes.productItem}>
-              <figure className={classes.productFigure}>
-                <img
-                  alt="ss"
-                  src={image.default}
-                  className={classes.productImage}
-                ></img>
-              </figure>
-              <h3>{p.title}</h3>
-              <p className={classes.productPrice}>USD {p.price}</p>
-              <Button
-                method={() => {
-                  ctx.setCartItem({
-                    id: p.id,
-                    title: p.title,
-                    collection: p.collection,
-                    price: p.price,
-                    quantity: p.quantity ?? 1,
-                    image: p.image,
-                  });
-                }}
-                styl="outline"
-                type="button"
-              >
-                Add to cart
-              </Button>
-            </li>
+            <Link to={`/product/${p.image}`}>
+              <li key={p.id} className={classes.productItem}>
+                <figure className={classes.productFigure}>
+                  <img
+                    alt="ss"
+                    src={image.default}
+                    className={classes.productImage}
+                  ></img>
+                </figure>
+                <h3>{p.title}</h3>
+                <p className={classes.productPrice}>USD {p.price}</p>
+                <Button
+                  method={() => {
+                    ctx.setCartItem({
+                      id: p.id,
+                      title: p.title,
+                      collection: p.collection,
+                      price: p.price,
+                      quantity: p.quantity ?? 1,
+                      image: p.image,
+                    });
+                  }}
+                  styl="outline"
+                  type="button"
+                >
+                  Add to cart
+                </Button>
+              </li>
+            </Link>
           );
         })}
       </ul>

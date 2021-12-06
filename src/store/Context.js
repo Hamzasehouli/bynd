@@ -26,13 +26,13 @@ const Initcontext = function (props) {
       setCart([]);
       return;
     }
-    console.log(JSON.parse(localStorage.getItem("cart")));
+    // console.log(JSON.parse(localStorage.getItem("cart")));
     // console.log(JSON.parse(localStorage.getItem("cart")));
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, []);
 
   const ctx = {
-    data,
+    data: allProducts,
     cart,
     sample,
     isLoggedIn,

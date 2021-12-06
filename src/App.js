@@ -30,6 +30,7 @@ import {
 
 import { Appcontext } from "./store/Context";
 import Bestselling from "./pages/Bestselling";
+import ProductShow from "./components/ProductShow";
 
 function App() {
   const [pathname, setPathname] = useState();
@@ -121,6 +122,10 @@ function App() {
             </Route>
             <Route path="/account/:login">
               <Login></Login>
+            </Route>
+            <Route path="/product/:productId">
+              <Nav />
+              <ProductShow></ProductShow>
             </Route>
             <Route path="*">
               <p>errro</p>

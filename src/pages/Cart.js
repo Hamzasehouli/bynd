@@ -7,12 +7,12 @@ const Cart = function (props) {
   const ctx = useContext(Appcontext);
   document.title = "Cart | bynd";
 
-  if (ctx.cart?.length === 0) {
-    return <p>Cart is empty</p>;
-  }
   const removeItem = function (id) {
     ctx.removeItemfromCart(id);
   };
+  if (ctx.cart?.length === 0) {
+    return <p>Cart is empty</p>;
+  }
   return (
     <>
       {props.status !== "profile" ? (
@@ -54,9 +54,19 @@ const Cart = function (props) {
                 <h5 className={classes.heading5}>{cartItem.collection}</h5>
                 <p className={classes.price}>${cartItem.price}</p>
                 <div className={classes.count}>
-                  <button type="button">-</button>
+                  <button
+                    onClick={() => ctx.changeQuantity(cartItem.id, "decrease")}
+                    type="button"
+                  >
+                    -
+                  </button>
                   <span>{cartItem.quantity}</span>
-                  <button type="button">+</button>
+                  <button
+                    onClick={() => ctx.changeQuantity(cartItem.id, "increase")}
+                    type="button"
+                  >
+                    +
+                  </button>
                 </div>
               </div>
               <Button

@@ -4,7 +4,7 @@ const CollectioncmpProducts = function (props) {
   return (
     <ul className={classes.productsList}>
       {props?.data?.map((d) => (
-        <Product key={d} data={d}></Product>
+        <Product key={d.id} data={d}></Product>
       ))}
     </ul>
   );

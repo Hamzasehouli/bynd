@@ -1,10 +1,46 @@
-import { useContext } from "react";
+import { useContext, useReducer, useMemo, useState, useEffect } from "react";
 import { Appcontext } from "../store/Context";
 import classes from "./Cart.module.css";
 import Button from "../components/Button";
+const initData = { quantity: 1 };
 
 const Cart = function (props) {
   const ctx = useContext(Appcontext);
+
+  const reducer = function (state, action) {
+    let ff;
+    const item = ctx.cart.find((item) => item.id === action.id);
+    if (action.type === "increase") {
+      // ff = { quantity: item.quantity };
+      item.quantity++;
+      ff = { quantity: item.quantity };
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      cart.forEach((element) => {
+        if (element.id === item.id) {
+          element.quantity = item.quantity;
+          console.log(ctx);
+          localStorage.setItem("cart", JSON.stringify(ctx.cart));
+        }
+      });
+    } else if (action.type === "decrease") {
+      if (item.quantity <= 1) return;
+      // ff = { quantity: item.quantity };
+      item.quantity--;
+      ff = { quantity: item.quantity };
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      cart.forEach((element) => {
+        if (element.id === item.id) {
+          element.quantity = item.quantity;
+          console.log(ctx);
+          localStorage.setItem("cart", JSON.stringify(ctx.cart));
+        }
+      });
+    }
+    return ff;
+  };
+
+  const [state, dispatch] = useReducer(reducer, initData);
+
   document.title = "Cart | bynd";
 
   const removeItem = function (id) {
@@ -55,14 +91,18 @@ const Cart = function (props) {
                 <p className={classes.price}>${cartItem.price}</p>
                 <div className={classes.count}>
                   <button
-                    onClick={() => ctx.changeQuantity(cartItem.id, "decrease")}
+                    onClick={() =>
+                      dispatch({ type: "decrease", id: cartItem.id })
+                    }
                     type="button"
                   >
                     -
                   </button>
                   <span>{cartItem.quantity}</span>
                   <button
-                    onClick={() => ctx.changeQuantity(cartItem.id, "increase")}
+                    onClick={() => {
+                      dispatch({ type: "increase", id: cartItem.id });
+                    }}
                     type="button"
                   >
                     +

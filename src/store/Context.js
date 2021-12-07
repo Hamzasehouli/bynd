@@ -1,4 +1,4 @@
-import React, { createContext, useState, useMemo } from "react";
+import React, { createContext, useState, useEffect, useReducer } from "react";
 import { cartItems } from "./cartItems";
 import { sampleShoes } from "./sampleShoes";
 import { bestSelling } from "./bestSelling";
@@ -21,7 +21,7 @@ const Initcontext = function (props) {
   const [sample, setSample] = useState(sampleShoes);
   const [data, setData] = useState(allProducts);
 
-  useMemo(() => {
+  useEffect(() => {
     if (!JSON.parse(localStorage.getItem("cart"))) {
       setCart([]);
       return;
@@ -36,6 +36,7 @@ const Initcontext = function (props) {
     cart,
     sample,
     isLoggedIn,
+
     setLoggedIn: (state) => {
       setIsLoggedIn(state);
     },
@@ -61,8 +62,9 @@ const Initcontext = function (props) {
       setCart(data);
       // localStorage.clear();
       localStorage.removeItem("cart");
+      localStorage.clear();
       localStorage.setItem("cart", JSON.stringify([]));
-      localStorage.setItem("cart", JSON.stringify(cart));
+      // localStorage.setItem("cart", JSON.stringify(cart));
     },
     // changeQuantity: (id, status) => {
     //   if(status === 'decrease'){

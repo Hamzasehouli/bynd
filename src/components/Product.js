@@ -9,8 +9,8 @@ const Product = function (props) {
   const ctx = useContext(Appcontext);
 
   return (
-    <Link to={`/product/${props.title}`}>
-      <li className={classes.product}>
+    <li className={classes.product}>
+      <Link to={`/product/${props.title}`}>
         <figure>
           <img
             style={{ cursor: "pointer" }}
@@ -19,29 +19,29 @@ const Product = function (props) {
             src={image.default}
           ></img>
         </figure>
-        <div className={classes.info}>
-          <h4 className={classes.headingQuartary}>{props.data.title}</h4>
-          <h4 className={classes.headingQuartary}>{props.data.collection}</h4>
-          <p className={classes.price}>${props.data.price} </p>
-          <Button
-            method={() => {
-              ctx.setCartItem({
-                id: props.data.id,
-                title: props.data.title,
-                collection: props.data.collection,
-                price: props.data.price,
-                quantity: props.data.quantity ?? 1,
-                image: props.data.image,
-              });
-            }}
-            styl="outline"
-            type="button"
-          >
-            Add to cart
-          </Button>
-        </div>
-      </li>{" "}
-    </Link>
+      </Link>
+      <div className={classes.info}>
+        <h4 className={classes.headingQuartary}>{props.data.title}</h4>
+        <h4 className={classes.headingQuartary}>{props.data.collection}</h4>
+        <p className={classes.price}>${props.data.price} </p>
+        <Button
+          method={() => {
+            ctx.setCartItem({
+              id: props.data.id,
+              title: props.data.title,
+              collection: props.data.collection,
+              price: props.data.price,
+              quantity: props.data.quantity ?? 1,
+              image: props.data.image,
+            });
+          }}
+          styl="outline"
+          type="button"
+        >
+          Add to cart
+        </Button>
+      </div>
+    </li>
   );
 };
 

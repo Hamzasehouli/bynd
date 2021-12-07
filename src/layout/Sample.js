@@ -20,8 +20,8 @@ const Sample = function () {
         {ctx.sample.map((p) => {
           let image = require(`../images/${p.image}.jpg`);
           return (
-            <Link to={`/product/${p.image}`}>
-              <li key={p.id} className={classes.productItem}>
+            <li key={p.id} className={classes.productItem}>
+              <Link to={`/product/${p.image}`}>
                 <figure className={classes.productFigure}>
                   <img
                     alt="ss"
@@ -29,26 +29,26 @@ const Sample = function () {
                     className={classes.productImage}
                   ></img>
                 </figure>
-                <h3>{p.title}</h3>
-                <p className={classes.productPrice}>USD {p.price}</p>
-                <Button
-                  method={() => {
-                    ctx.setCartItem({
-                      id: p.id,
-                      title: p.title,
-                      collection: p.collection,
-                      price: p.price,
-                      quantity: p.quantity ?? 1,
-                      image: p.image,
-                    });
-                  }}
-                  styl="outline"
-                  type="button"
-                >
-                  Add to cart
-                </Button>
-              </li>
-            </Link>
+              </Link>
+              <h3>{p.title}</h3>
+              <p className={classes.productPrice}>USD {p.price}</p>
+              <Button
+                method={() => {
+                  ctx.setCartItem({
+                    id: p.id,
+                    title: p.title,
+                    collection: p.collection,
+                    price: p.price,
+                    quantity: p.quantity ?? 1,
+                    image: p.image,
+                  });
+                }}
+                styl="outline"
+                type="button"
+              >
+                Add to cart
+              </Button>
+            </li>
           );
         })}
       </ul>

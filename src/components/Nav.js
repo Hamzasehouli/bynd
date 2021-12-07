@@ -27,7 +27,7 @@ const Nav = function () {
         <p style={{ fontSize: 4 + "rem", fontWeight: 700 }}>bynd</p>
       </Link>
       <ul className={classes.nav__links}>
-        <li>
+        <li className={ctx.cart.length > 0 ? classes.cart : ""}>
           <Link to="/cart">Cart</Link>
         </li>
         {ctx.isLoggedIn ? (

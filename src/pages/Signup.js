@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
@@ -9,6 +9,7 @@ import { Appcontext } from "../store/Context";
 
 const Signup = function () {
   const ctx = useContext(Appcontext);
+  const [areCredentialsCorrect, setAreCredentialsCorrect] = useState(true);
   const history = useHistory();
   document.title = "Register | bynd";
   const email = useRef(null);
@@ -45,16 +46,25 @@ const Signup = function () {
         email.current.value = "";
         password.current.value = "";
         ctx.setLoggedIn(true);
-
+        setAreCredentialsCorrect(true);
         history.replace("/");
       }
     } catch (err) {
+      setAreCredentialsCorrect(false);
       ctx.setLoggedIn(false);
     }
   };
   return (
     <section className={classes.section__form}>
       <form className={classes.form} onSubmit={handleSubmit}>
+        <p
+          style={{
+            color: "red",
+            display: !areCredentialsCorrect ? "block" : "none",
+          }}
+        >
+          "Credentials are incorrect"
+        </p>
         <h2>Create account</h2>
         {/* <div className={classes.form__control}>
           <label className={classes.form__label}>First name</label>

@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useMemo, useEffect } from "react";
+import React, { useRef, useContext, useMemo, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import classes from "./Form.module.css";
@@ -7,14 +7,13 @@ import { Appcontext } from "../store/Context";
 
 const Login = function () {
   const history = useHistory();
+  const [areCredentialsCorrect, setAreCredentialsCorrect] = useState(true);
   const ctx = useContext(Appcontext);
   const email = useRef();
   const password = useRef();
   document.title = "Login | bynd";
   const handleSubmit = async function (e) {
     e.preventDefault();
-    // useMemo(() => {});
-    console.log();
 
     try {
       const res = await axios({
@@ -28,17 +27,26 @@ const Login = function () {
       if (res.statusText === "OK") {
         document.cookie = `jwt=${res.data.idToken}; path=/`;
         ctx.setLoggedIn(true);
-        console.log(ctx.isLoggedIn);
+        setAreCredentialsCorrect(true);
         history.replace("/");
       }
     } catch (err) {
-      console.log("button");
+      setAreCredentialsCorrect(false);
       ctx.setLoggedIn(false);
     }
   };
+
   return (
     <section className={classes.section__form}>
       <form className={classes.form} onSubmit={handleSubmit}>
+        <p
+          style={{
+            color: "red",
+            display: !areCredentialsCorrect ? "block" : "none",
+          }}
+        >
+          "Credentials are incorrect"
+        </p>
         <h2>Login</h2>
         <div className={classes.form__control}>
           <label className={classes.form__label}>Email</label>

@@ -1,4 +1,5 @@
 import classes from "./Footer.module.css";
+import sprite from "../sprite.svg";
 const Footer = function () {
   return (
     <footer className={classes.footer}>
@@ -46,25 +47,49 @@ const Footer = function () {
           <ul className={classes.footerItemSocialLinksList}>
             <li className={classes.footerItemSocialLinksItem}>
               <a href="/#" className={classes.footerItemSocialLinksItemLink}>
-                facebook
+                <svg className={classes.soc}>
+                  <use href={"../" + sprite + "#icon-facebook"}></use>
+                </svg>
               </a>
             </li>
-            <li className={classes.footerItemSocialLinksItemLink}>Instagram</li>
+            <li className={classes.footerItemSocialLinksItemLink}>
+              <a href="/#" className={classes.footerItemSocialLinksItemLink}>
+                <svg className={classes.soc}>
+                  <use href={"../" + sprite + "#icon-instagram"}></use>
+                </svg>
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
       <p className={classes.copy}>Copyright © 2021, bynd.</p>
       <p className={classes.copy}>
         Made by{" "}
-        <a target="_blank" href="https://hamzasehouli.ma">
+        <a rel="noreferrer" target="_blank" href="https://hamzasehouli.ma">
           Hamza Sehouli
         </a>
       </p>
       <ul className={classes.payList}>
-        <li className={classes.payListItem}>visa</li>
-        <li className={classes.payListItem}>visa</li>
-        <li className={classes.payListItem}>visa</li>
-        <li className={classes.payListItem}>visa</li>
+        <li className={classes.payListItem}>
+          <svg className={classes.svg}>
+            <use href={"../" + sprite + "#icon-mastercard"}></use>
+          </svg>
+        </li>
+        <li className={classes.payListItem}>
+          <svg className={classes.svg}>
+            <use href={"../" + sprite + "#icon-visa"}></use>
+          </svg>
+        </li>
+        <li className={classes.payListItem}>
+          <svg className={classes.svg}>
+            <use href={"../" + sprite + "#icon-paypal"}></use>
+          </svg>
+        </li>
+        <li className={classes.payListItem}>
+          <svg className={classes.svg}>
+            <use href={"../" + sprite + "#icon-stripe"}></use>
+          </svg>
+        </li>
       </ul>
     </footer>
   );

@@ -26,7 +26,7 @@
 
 .copy {
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem auto;
 }
 
 .payList {
@@ -35,5 +35,22 @@
   justify-content: center;
 }
 .payListItem:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.svg {
+  width: 20px;
+  height: 20px;
+}
+.soc {
+  fill: var(--color-secondary-dark);
+  width: 25px;
+  height: 25px;
+}
+
+.footerItemSocialLinksList {
+  display: flex;
+}
+.footerItemSocialLinksList > *:not(:last-child) {
   margin-right: 1rem;
 }

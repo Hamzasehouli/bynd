@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./Nav.module.css";
 import { useContext } from "react";
+import sprite from "../sprite.svg";
 import { Appcontext } from "../store/Context";
 import Button from "./Button";
 const Nav = function () {
@@ -28,7 +29,11 @@ const Nav = function () {
       </Link>
       <ul className={classes.nav__links}>
         <li className={ctx.cart.length > 0 ? classes.cart : ""}>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">
+            <svg className={classes.soc}>
+              <use href={"../" + sprite + "#icon-cart"}></use>
+            </svg>
+          </Link>
         </li>
         {ctx.isLoggedIn ? (
           <button
@@ -38,20 +43,30 @@ const Nav = function () {
               document.cookie = "jwt=''; path=/";
             }}
           >
-            Logout
+            <svg className={classes.soc}>
+              <use href={"../" + sprite + "#icon-logout"}></use>
+            </svg>
           </button>
         ) : (
           ""
         )}
         {ctx.isLoggedIn ? (
           <li>
-            <Link to="/profile">Profile</Link>
+            <Link to="/profile">
+              <svg className={classes.soc}>
+                <use href={"../" + sprite + "#icon-profile"}></use>
+              </svg>
+            </Link>
           </li>
         ) : (
           ""
         )}
         <li>
-          <Link to="/account/login">Account</Link>
+          <Link to="/account/login">
+            <svg className={classes.soc}>
+              <use href={"../" + sprite + "#icon-account"}></use>
+            </svg>
+          </Link>
         </li>
       </ul>
     </nav>

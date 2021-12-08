@@ -34,3 +34,10 @@ nav {
   border-radius: 50%;
   background-color: rgba(233, 39, 39, 0.719);
 }
+
+.soc {
+  width: 25px;
+  height: 25px;
+  fill: var(--color-dark);
+  opacity: 0.89;
+}

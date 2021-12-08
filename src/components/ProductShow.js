@@ -20,7 +20,7 @@ const ProductShow = function (props) {
         </figure>
         <div className={classes.productInfo}>
           <h1 style={{ textTransform: "capitalize" }}>{product.title}</h1>
-          <p>
+          <p style={{ lineHeight: 160 + "%", fontSize: 1.6 + "rem" }}>
             Taking inspiration from the human body and '90s athletics
             aesthetics, the Nike Air Max 95 mixes comfort with modern
             communication.Text bubbles meet the swiftness of Air in the iconic

@@ -30,7 +30,7 @@ const Forgetpassword = function () {
         },
         body: JSON.stringify({
           requestType: "PASSWORD_RESET",
-          email: "cedilaj898@shirulo.com",
+          email: email.current.value,
         }),
       }
     );

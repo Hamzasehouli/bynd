@@ -12,10 +12,17 @@ const Signup = function () {
   const [areCredentialsCorrect, setAreCredentialsCorrect] = useState(true);
   const history = useHistory();
   document.title = "Register | bynd";
-  const email = useRef(null);
-  const password = useRef(null);
+  const email = useRef();
+  const password = useRef();
   const handleSubmit = async function (e) {
     e.preventDefault();
+    console.log(email.current.value);
+    console.log(password.current.value);
+
+    if (email.current.value === "" || password.current.value === "") {
+      setAreCredentialsCorrect(false);
+      return;
+    }
 
     // axios({
     //   method: "post",
@@ -63,7 +70,7 @@ const Signup = function () {
             display: !areCredentialsCorrect ? "block" : "none",
           }}
         >
-          "Credentials are incorrect"
+          Credentials are incorrect
         </p>
         <h2>Create account</h2>
         {/* <div className={classes.form__control}>

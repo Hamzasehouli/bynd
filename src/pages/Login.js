@@ -12,9 +12,16 @@ const Login = function () {
   const email = useRef();
   const password = useRef();
   document.title = "Login | bynd";
+
   const handleSubmit = async function (e) {
     e.preventDefault();
-
+    if (
+      email.current.value.trim() === "" ||
+      password.current.value.trim() === ""
+    ) {
+      setAreCredentialsCorrect(false);
+      return;
+    }
     try {
       const res = await axios({
         method: "post",
@@ -45,7 +52,7 @@ const Login = function () {
             display: !areCredentialsCorrect ? "block" : "none",
           }}
         >
-          "Credentials are incorrect"
+          Credentials are incorrect
         </p>
         <h2>Login</h2>
         <div className={classes.form__control}>

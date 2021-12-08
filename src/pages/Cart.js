@@ -47,7 +47,20 @@ const Cart = function (props) {
     ctx.removeItemfromCart(id);
   };
   if (ctx.cart?.length === 0) {
-    return <p>Cart is empty</p>;
+    return (
+      <section
+        style={{
+          minHeight: 50 + "vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: 5 + "rem",
+          // paddingTop: 7 + "rem",
+        }}
+      >
+        <p>Cart is empty 🛒🛒</p>;
+      </section>
+    );
   }
   return (
     <>

@@ -12,18 +12,11 @@ import Allproducts from "./pages/Allproducts";
 import Cart from "./pages/Cart";
 import Forgetpassword from "./pages/Forgetpassword";
 import Nav from "./components/Nav";
-import React, {
-  useEffect,
-  useContext,
-  useState,
-  useLayoutEffect,
-  useMemo,
-} from "react";
+import React, { useEffect, useContext, useState } from "react";
 
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
   Redirect,
 } from "react-router-dom";
@@ -49,15 +42,22 @@ function App() {
         },
         body: JSON.stringify({ idToken: document.cookie.split("=")[1] }),
       }
-    ).then((res) => {
-      if (res.ok) {
-        ctx.setLoggedIn(true);
-      } else {
-        console.log(res);
-        ctx.setLoggedIn(false);
-      }
-      return res.json();
-    });
+    )
+      .then((res) => {
+        if (res.ok) {
+          ctx.setLoggedIn(true);
+        } else {
+          console.log(res);
+          ctx.setLoggedIn(false);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const { users } = data;
+        console.log(users);
+        if (!users) return;
+        ctx.setUser(users[0]);
+      });
   }, []);
 
   return (

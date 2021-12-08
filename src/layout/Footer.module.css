@@ -43,7 +43,7 @@
   height: 20px;
 }
 .soc {
-  fill: var(--color-secondary-dark);
+  fill: var(--color-dark);
   width: 25px;
   height: 25px;
 }
@@ -53,4 +53,8 @@
 }
 .footerItemSocialLinksList > *:not(:last-child) {
   margin-right: 1rem;
+}
+
+.footerItemList > *:not(:last-child) {
+  margin-bottom: 1rem;
 }

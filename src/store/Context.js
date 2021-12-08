@@ -14,6 +14,8 @@ export const Appcontext = createContext({
   data: [],
   sample: [],
   cart: [],
+  user: "",
+  setUser: () => {},
   isLoggedIn: false,
   setLoggedIn: () => {},
   setCartItem: () => {},
@@ -23,6 +25,7 @@ export const Appcontext = createContext({
 
 const Initcontext = function (props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState();
   const [cart, setCart] = useState("");
   const [sample, setSample] = useState(sampleShoes);
   const [data, setData] = useState(allProducts);
@@ -45,7 +48,10 @@ const Initcontext = function (props) {
     cart,
     sample,
     isLoggedIn,
-
+    user,
+    setUser: (state) => {
+      setUser(state);
+    },
     setLoggedIn: (state) => {
       console.log(state);
       setIsLoggedIn(state);

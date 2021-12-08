@@ -94,7 +94,8 @@ const Signup = function () {
           Create
         </Button>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Link to="/account/signup">Return to store</Link>
+          <Link to="/">Return to store</Link>
+          <Link to="/account/login">Login instead</Link>
         </div>
       </form>
     </section>

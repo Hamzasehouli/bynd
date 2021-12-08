@@ -18,7 +18,7 @@ const Cart = function (props) {
       cart.forEach((element) => {
         if (element.id === item.id) {
           element.quantity = item.quantity;
-          console.log(ctx);
+
           localStorage.setItem("cart", JSON.stringify(ctx.cart));
         }
       });
@@ -31,7 +31,7 @@ const Cart = function (props) {
       cart.forEach((element) => {
         if (element.id === item.id) {
           element.quantity = item.quantity;
-          console.log(ctx);
+
           localStorage.setItem("cart", JSON.stringify(ctx.cart));
         }
       });

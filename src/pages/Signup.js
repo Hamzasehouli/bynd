@@ -26,7 +26,7 @@ const Signup = function () {
     // });
     try {
       const res = await fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBu__kxxOcq2wvUMelzlXijG7lDL7iBP8U",
         {
           method: "POST",
           header: {
@@ -45,6 +45,7 @@ const Signup = function () {
         email.current.value = "";
         password.current.value = "";
         ctx.setLoggedIn(true);
+
         history.replace("/");
       }
     } catch (err) {

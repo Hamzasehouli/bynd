@@ -1,4 +1,10 @@
-import React, { createContext, useState, useEffect, useReducer } from "react";
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useReducer,
+  useMemo,
+} from "react";
 import { cartItems } from "./cartItems";
 import { sampleShoes } from "./sampleShoes";
 import { bestSelling } from "./bestSelling";
@@ -26,10 +32,13 @@ const Initcontext = function (props) {
       setCart([]);
       return;
     }
-    // console.log(JSON.parse(localStorage.getItem("cart")));
-    // console.log(JSON.parse(localStorage.getItem("cart")));
+
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, []);
+
+  // useMemo(() => {
+  //   console.log("test");
+  // }, [isLoggedIn]);
 
   const ctx = {
     data: allProducts,
@@ -38,6 +47,7 @@ const Initcontext = function (props) {
     isLoggedIn,
 
     setLoggedIn: (state) => {
+      console.log(state);
       setIsLoggedIn(state);
     },
     setCartItem: (state) => {

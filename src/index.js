@@ -10,6 +10,6 @@ ReactDOM.render(
   <Initcontext>
     <App />
   </Initcontext>,
-  // </React.StrictMode>,
+  // </React.StrictMode>
   document.getElementById("root")
 );

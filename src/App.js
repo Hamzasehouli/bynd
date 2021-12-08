@@ -39,9 +39,9 @@ function App() {
     setPathname(window.location.pathname);
   });
 
-  useMemo(() => {
-    const res = fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDI2GAM3DWHI8s6vmRr7rufuuEVDoG3ODA",
+  useEffect(() => {
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBu__kxxOcq2wvUMelzlXijG7lDL7iBP8U",
       {
         method: "POST",
         header: {
@@ -53,11 +53,12 @@ function App() {
       if (res.ok) {
         ctx.setLoggedIn(true);
       } else {
+        console.log(res);
         ctx.setLoggedIn(false);
       }
       return res.json();
     });
-  });
+  }, []);
 
   return (
     <>

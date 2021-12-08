@@ -9,7 +9,7 @@ const ProductShow = function (props) {
   const ctx = useContext(Appcontext);
 
   let product = ctx.data.find((p) => p.image === params.productId);
-  console.log(product.image);
+
   const img = require(`../images/${product.image}.jpg`);
 
   return (

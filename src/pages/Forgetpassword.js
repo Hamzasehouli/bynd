@@ -34,9 +34,7 @@ const Forgetpassword = function () {
         }),
       }
     );
-    // console.log(res);
-    // const data = await res.json();
-    // console.log(data);
+
     if (res.ok) {
       setIsEmailSent("emailCouldBeSent");
     } else {

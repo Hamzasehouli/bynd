@@ -47,14 +47,13 @@ function App() {
         if (res.ok) {
           ctx.setLoggedIn(true);
         } else {
-          console.log(res);
           ctx.setLoggedIn(false);
         }
         return res.json();
       })
       .then((data) => {
         const { users } = data;
-        console.log(users);
+
         if (!users) return;
         ctx.setUser(users[0]);
       });

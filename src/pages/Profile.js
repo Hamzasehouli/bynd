@@ -30,7 +30,6 @@ const Profile = function () {
   const updateEmail = async function (e) {
     e.preventDefault();
 
-    console.log(document.cookie.split("=")[1]);
     const res = await fetch(
       "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBu__kxxOcq2wvUMelzlXijG7lDL7iBP8U",
       {
@@ -44,9 +43,9 @@ const Profile = function () {
         }),
       }
     );
-    console.log(res);
+
     const data = await res.json();
-    console.log(data);
+
     if (res.ok) {
       document.cookie = `jwt=${data.idToken}; path=/`;
       email.current.value = "";

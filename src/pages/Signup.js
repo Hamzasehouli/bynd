@@ -16,8 +16,6 @@ const Signup = function () {
   const password = useRef();
   const handleSubmit = async function (e) {
     e.preventDefault();
-    console.log(email.current.value);
-    console.log(password.current.value);
 
     if (email.current.value === "" || password.current.value === "") {
       setAreCredentialsCorrect(false);

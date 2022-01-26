@@ -39,10 +39,6 @@ const Initcontext = function (props) {
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, []);
 
-  // useMemo(() => {
-  //   console.log("test");
-  // }, [isLoggedIn]);
-
   const ctx = {
     data: allProducts,
     cart,
@@ -53,7 +49,6 @@ const Initcontext = function (props) {
       setUser(state);
     },
     setLoggedIn: (state) => {
-      console.log(state);
       setIsLoggedIn(state);
     },
     setCartItem: (state) => {
